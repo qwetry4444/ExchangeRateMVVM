@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:vm="clr-namespace:ExchangeRateMVVM.ViewModel"
+            xmlns:model="clr-namespace:ExchangeRateMVVM.Model"
+            x:DataType="vm:ValutesViewModel"
+            x:Class="ExchangeRateMVVM.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="70">
+            <VerticalStackLayout HorizontalOptions="End" Spacing="15">
+                <HorizontalStackLayout VerticalOptions="Center" >
+                    <Label VerticalOptions="Center" Text="Дата"/>
+                    <DatePicker Date="{Binding Date}"/>
+
+                </HorizontalStackLayout>
+                <Label>Найден курс валют на</Label>
+                <Label Text="{Binding DateLabel}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label>Из какой валюты конвертировать?</Label>
+                <HorizontalStackLayout Spacing="25">
+                    <StackLayout>
+                        <Picker 
+                        x:Name="SelectCurrencySrc"
+                        ItemsSource="{Binding Valutes, Mode=TwoWay}" 
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedItem="{Binding SelectedValuteSrc}">
+                        </Picker>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" Text="{Binding AmountSrc}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label>В какую валюту конвертировать?</Label>
+                <HorizontalStackLayout Spacing="25">
+                    <StackLayout>
+                        <Picker 
+                    x:Name="SelectDestSrc"
+                    ItemsSource="{Binding Valutes, Mode=TwoWay}" 
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedValuteDest}">
+                        </Picker>
+                    </StackLayout>
+                    <Label VerticalOptions="Center" Text="{Binding AmountDest}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+
+
+<!--<CollectionView ItemsSource="{Binding Valutes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Valute">
+                    <Label Text="{Binding Name}"></Label>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
+<!--<ListView ItemsSource="{Binding Valutes}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Valute">
+                    <Label Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+<!--<CollectionView ItemsSource="{Binding Valutes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Valute">
+                    <HorizontalStackLayout Padding="10">
+                        <Grid Padding="10">
+                            <Frame HeightRequest="125">
+                                <Label Text="{Binding Name}"/>
+                            </Frame>
+                        </Grid>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
