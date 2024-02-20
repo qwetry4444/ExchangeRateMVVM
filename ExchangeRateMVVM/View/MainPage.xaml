@@ -49,34 +49,3 @@
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
-
-
-
-<!--<CollectionView ItemsSource="{Binding Valutes}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Valute">
-                    <Label Text="{Binding Name}"></Label>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
-
-<!--<ListView ItemsSource="{Binding Valutes}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="model:Valute">
-                    <Label Text="{Binding Name}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-<!--<CollectionView ItemsSource="{Binding Valutes}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Valute">
-                    <HorizontalStackLayout Padding="10">
-                        <Grid Padding="10">
-                            <Frame HeightRequest="125">
-                                <Label Text="{Binding Name}"/>
-                            </Frame>
-                        </Grid>
-                    </HorizontalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
